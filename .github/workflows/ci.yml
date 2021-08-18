@@ -29,11 +29,13 @@ jobs:
     - name: Install and Build
       run: |
         npm install
-        npm run-script build
+        npm run build
         
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v3
-      with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with: 
+        branch: gh-pages
+        folder: dist
+        ssh-key: ${{ secrets.ACCESS_TOKEN }}
+
+
