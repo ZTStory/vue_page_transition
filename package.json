@@ -1,7 +1,7 @@
 {
   "name": "vite-project",
   "version": "0.0.0",
-  "homepage": "https://ZTStory.github.io/vue_page_transition",
+  "homepage": "https://ztstory.github.io/vue_page_transition",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
