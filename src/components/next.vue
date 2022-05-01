@@ -1,6 +1,6 @@
 <template>
     <div class="page_container">
-        <div class="nav_bar">NextPage</div>
+        <div class="nav_bar half1px">NextPage</div>
         <div class="bb_btn mgt_50" @click="goBack">Go Back</div>
     </div>
 </template>

@@ -4,7 +4,7 @@
         <img class="mgt_50" src="../assets/logo.png" alt="" />
         <div class="bb_btn mgt_50" @click="toNextPage">To NextPage</div>
         <div class="bb_btn mgt_50" @click="changeAnimation">Change Animation：{{ animationMode }}</div>
-        <div class="tab_bar">
+        <div class="tab_bar half1px">
             <div class="tab_item active">Home</div>
             <div class="tab_item" @click="toMinePage">Mine</div>
         </div>
