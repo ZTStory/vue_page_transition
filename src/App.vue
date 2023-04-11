@@ -7,11 +7,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { nextTick, ref, watch } from "vue";
+import { useCustomRouter, useRouterAnimate } from "./router/custRouter";
 import { GlobalData } from "./global.data";
-const router = useRouter();
+const router = useCustomRouter();
+const needAnimate = useRouterAnimate();
 const transitionMode = ref("out-in");
+
 router.beforeEach((to, from) => {
     // 这里通过router中设置的页面深度depth来判断动画的方向，这样不会收到刷新和浏览器前进后退的影响而导致动画执行错误
     const toDepth = to.meta.depth;
@@ -23,6 +25,11 @@ router.beforeEach((to, from) => {
         return true;
     }
 
+    if (!needAnimate.value) {
+        // 处理 Safari 等浏览器自带手势切换页面时，不执行过渡动画
+        return true;
+    }
+
     if (GlobalData.animationMode.value === "slide") {
         transitionMode.value = "";
         to.meta.transitionName = toDepth < fromDepth ? "slide-right" : "slide-left";
@@ -30,6 +37,11 @@ router.beforeEach((to, from) => {
         transitionMode.value = "out-in";
         to.meta.transitionName = "animation";
     }
+
+    nextTick(() => {
+        needAnimate.value = false;
+    })
+    
 
     return true;
 });

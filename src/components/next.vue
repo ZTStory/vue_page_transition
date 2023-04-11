@@ -6,9 +6,9 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
+import { useCustomRouter } from "../router/custRouter";
 
-const router = useRouter();
+const router = useCustomRouter();
 const goBack = () => {
     router.back();
 };

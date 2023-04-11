@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://ztstory.github.io/vue_page_transition",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "serve": "vite preview"
   },

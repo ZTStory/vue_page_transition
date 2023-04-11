@@ -13,10 +13,10 @@
 
 <script setup>
 import { computed } from "vue";
-import { useRouter } from "vue-router";
 import { GlobalData } from "../global.data";
+import { useCustomRouter } from "../router/custRouter";
 
-const router = useRouter();
+const router = useCustomRouter();
 
 const animationMode = computed(() => {
     return GlobalData.animationMode.value;
