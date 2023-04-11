@@ -1,1 +1,0 @@
-import{p as a,l as s,u as t,o as c,i as e,j as o}from"./vendor.6ee3f5bb.js";a("data-v-2c166770");const n={class:"page_container"},d=o("div",{class:"nav_bar half1px"},"NextPage",-1);s();const r={setup(a){const s=t(),r=()=>{s.back()};return(a,s)=>(c(),e("div",n,[d,o("div",{class:"bb_btn mgt_50",onClick:r},"Go Back")]))},__scopeId:"data-v-2c166770"};export{r as default};
