@@ -38,12 +38,12 @@ router.beforeEach((to, from) => {
         to.meta.transitionName = "animation";
     }
 
-    nextTick(() => {
-        needAnimate.value = false;
-    })
-    
-
     return true;
+});
+
+router.afterEach((to, from) => {
+    // to and from are both route objects.
+    needAnimate.value = false;
 });
 </script>
 
